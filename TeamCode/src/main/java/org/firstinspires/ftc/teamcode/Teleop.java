@@ -34,7 +34,26 @@ public class Teleop extends LinearOpMode {
         waitForStart();
 
         while(!isStopRequested()) {
-
+            //drive code forward and back
+            r1.setPower(gamepad1.left_stick_y);
+            r2.setPower(gamepad1.left_stick_y);
+            l1.setPower(gamepad1.left_stick_y);
+            l2.setPower(gamepad1.left_stick_y);
+            //strafe right
+            r1.setPower(gamepad1.right_trigger);
+            r2.setPower(-gamepad1.right_trigger);
+            l1.setPower(-gamepad1.right_trigger);
+            l2.setPower(gamepad1.right_trigger);
+            //strafe left
+            r1.setPower(-gamepad1.left_trigger);
+            r2.setPower(gamepad1.left_trigger);
+            l1.setPower(gamepad1.left_trigger);
+            l2.setPower(-gamepad1.left_trigger);
+            //turn
+            r1.setPower(gamepad1.left_stick_x);
+            r2.setPower(gamepad1.left_stick_x);
+            l1.setPower(-gamepad1.left_stick_x);
+            l2.setPower(-gamepad1.left_stick_x);
         }
         }
     }
