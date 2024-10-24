@@ -56,7 +56,7 @@ public class Teleop extends LinearOpMode {
             l1.setPower(-gamepad1.left_stick_x);
             l2.setPower(-gamepad1.left_stick_x);
 
-            //lift.setDirection(DcMotorSimple.Direction.REVERSE);
+            lift.setDirection(DcMotorSimple.Direction.REVERSE);
             lift.setPower(gamepad2.left_stick_y*SpeedMultiplier);
 
             //CLAW CODE
