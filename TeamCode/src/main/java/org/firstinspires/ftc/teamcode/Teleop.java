@@ -3,6 +3,7 @@ import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 
 
@@ -54,6 +55,20 @@ public class Teleop extends LinearOpMode {
             r2.setPower(gamepad1.left_stick_x);
             l1.setPower(-gamepad1.left_stick_x);
             l2.setPower(-gamepad1.left_stick_x);
+
+            //lift.setDirection(DcMotorSimple.Direction.REVERSE);
+            lift.setPower(gamepad2.left_stick_y*SpeedMultiplier);
+
+            //CLAW CODE
+
+            if (gamepad2.a) {
+                clawwheel.setPosition(0);
+                telemetry.addData("Pressed:a", "a");
+            }
+            if (gamepad2.b) {
+                clawwheel.setPosition(1);
+                telemetry.addData("Pressed:","b");
+            }
         }
         }
     }
